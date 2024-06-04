@@ -7,4 +7,4 @@ string = 'Felipe'
 outra_variavel = f'{string[:4]}ABC{string[5:]}'
 
 print(string[4])
-print(outra_variavel.zfill(100))
+print(outra_variavel.zfill(20))
