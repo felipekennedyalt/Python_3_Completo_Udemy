@@ -27,7 +27,7 @@ lista_de_listas_de_inteiros = [
     [111, 112],
     [222, 223],
 ]
-
+# entendi errado, era pra ver se tinha numero duplicado em cada lista, e não comparar uma com outra. essa foi bem confusa
 tuple(lista_de_listas_de_inteiros)
 
 def encontrar_o_primeiro_duplicado(setado, num_lista1, num_lista2):
