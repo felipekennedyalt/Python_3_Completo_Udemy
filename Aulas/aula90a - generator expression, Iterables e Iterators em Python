@@ -1,0 +1,28 @@
+# generator expression, Iterables e Iterators em Python
+import sys
+import pprint
+
+def p(valor):
+    pprint.pprint(valor)
+
+# iterable = ['Eu', 'Tenho', '__iter__'] 
+# iterator = iterable.__iter__() #ou iter(iterable) # tem __iter__ e __next__ #Iterator não sabe nada sobre o iterável, só sabe entregar o proximo valor e o resto que se foda
+
+# p(next(iterator))
+# p(next(iterator))# o iterator esgota os valores, se eu pedir o primeiro, ou valores anteriores ele não vai saber me dar, entao se eu chamar o iterator em um 'for' e ele acabar, se eu chama-lo em outro 'for' ele ja vai estar no ultimo valor. ou seja, não podemos fazer mais de um 'for' em um mesmo iterator, por isso podemos converte-lo em lista antes de usar.
+# p(next(iterator))# se colocar mais um vai dar a exeção 'StopIteration', pois não vai mais ter valores para mostrar
+
+# Generator são basicamente funçoes que sabem pausar em determinada ocasião
+# Todo generator é um iterator mas um iterator não é um generator
+
+lista = [n for n in range(100)]# em uma situação em que não quero que a lista fique salva na memória por ser muito grande ou algo assim, eu usaria o generator, trocando os '[]' por '()'
+generator = (n for n in range(100))# assim o python vai me dizer que tenho um generator em um certo espaço de memória
+p(sys.getsizeof(lista))# para saber o tamanho da lista em bytes
+p(sys.getsizeof(generator))# o generator é muito menor que a lista não importa o tamanho deles pois enquanto a lista está salvando tudo, o generator só salvou até um ponto e pausou
+
+p(next(generator))
+p(next(generator))
+p(next(generator))
+
+for n in generator:
+    p(n)# não posso acessar o len() dele pois não está todo na memória, por exemplo.
