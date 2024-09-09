@@ -1,4 +1,4 @@
-__all__ = [# aqui eu escrevo as variávei que eu quero que apareção ao usar o import com a *
+__all__ = [# aqui eu escrevo as variávei que eu quero que apareça ao usar o import com a *
     'variavel',
     'soma_do_modulo'
 ]
